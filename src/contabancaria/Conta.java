@@ -12,6 +12,9 @@ package contabancaria;
  */
 public  abstract class Conta {
     
+    public static final int VALOR_PADRAO_MULTIPLICACAO=3;
+    public static final double VALOR_DESCONTO_DEPOSITO=0.10;
+    
     protected double saldo;
     
     /**

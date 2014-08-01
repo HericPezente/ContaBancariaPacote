@@ -14,9 +14,7 @@ package contabancaria;
         
 public class ContaPoupanca extends Conta {
     
-    public static final int VALOR_PADRAO_MULTIPLICACAO=3;
-    
-    public static final double VALOR_DESCONTO_DEPOSITO=0.10;
+   
 
     @Override
     public void atualiza(double taxa) {

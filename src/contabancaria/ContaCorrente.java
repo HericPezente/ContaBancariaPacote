@@ -11,9 +11,32 @@ package contabancaria;
  * @author i03
  */
 public class ContaCorrente extends Conta implements Tributavel{ //ContaCorrente é uma classe concreta.
-    public void atualiza(double taxa){
-        this.saldo += this.saldo * taxa * 2;
+    
+    private Cliente cliente;
+    
+    public ContaCorrente(Cliente cliente){
+        this.cliente=cliente;
+    };
+    
+    public ContaCorrente(){
     }
+    
+    public void atualiza(double taxa){
+        if(cliente != null){
+            if(cliente.getTipoCliente() == TipoCliente.UNIVERSITARIO){
+                this.saldo += this.saldo * taxa * TipoCliente.UNIVERSITARIO.getMultiplicador();
+            }else 
+                if(cliente.getTipoCliente() == TipoCliente.CORPORATIVO){
+                    this.saldo += this.saldo * taxa * TipoCliente.CORPORATIVO.getMultiplicador();
+                }
+                else 
+                   if (cliente.getTipoCliente() == TipoCliente.EXCLUSIVO){
+                       this.saldo += this.saldo * taxa * TipoCliente.EXCLUSIVO.getMultiplicador();
+                   }
+        }
+        else 
+           this.saldo += this.saldo * taxa * 2;
+    };
 
     @Override
     public double getBonificacao() {
@@ -24,7 +47,7 @@ public class ContaCorrente extends Conta implements Tributavel{ //ContaCorrente 
 
     
     public void deposita(double conta){
-        this.saldo += conta - ContaPoupanca.VALOR_DESCONTO_DEPOSITO;
+        this.saldo += conta - VALOR_DESCONTO_DEPOSITO;
         
     }
 
