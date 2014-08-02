@@ -27,6 +27,10 @@ public  abstract class Conta {
     
     public void deposita(double vlr_deposito){
         
+        if (vlr_deposito < 0){
+            throw new IllegalArgumentException();
+            
+        }else
        	this.saldo +=vlr_deposito;
     }
 
