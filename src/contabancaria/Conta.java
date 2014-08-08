@@ -14,13 +14,16 @@ public  abstract class Conta {
     
     public static final int VALOR_PADRAO_MULTIPLICACAO=3;
     public static final double VALOR_DESCONTO_DEPOSITO=0.10;
-    
     protected double saldo;
     
     /**
      Obtem o saldo da conta
      */
 
+    public Conta(){
+    
+    }
+    
     public double getSaldo() {
         return this.saldo;
     }
@@ -28,7 +31,10 @@ public  abstract class Conta {
     public void deposita(double vlr_deposito) {
         
         if (vlr_deposito < 0){
-            throw new IllegalArgumentException();
+            //throw new IllegalArgumentException("Você tentou depositar um valor invalido");
+            //throw new ValorInvalidoException("Você tentou depositar um valor invalido");
+            throw new ValorInvalidoException(vlr_deposito);
+            
             
         }else
        	this.saldo +=vlr_deposito;

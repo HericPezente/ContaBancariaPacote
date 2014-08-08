@@ -14,12 +14,13 @@ public class ContaCorrente extends Conta implements Tributavel{ //ContaCorrente 
     
     private Cliente cliente;
     
+    public ContaCorrente(){
+    }  
+    
     public ContaCorrente(Cliente cliente){
         this.cliente=cliente;
     };
     
-    public ContaCorrente(){
-    }
     
     public void atualiza(double taxa){
         if(cliente != null){
@@ -45,9 +46,13 @@ public class ContaCorrente extends Conta implements Tributavel{ //ContaCorrente 
     
     
 
-    
+    @Override
     public void deposita(double conta){
-        this.saldo += conta - VALOR_DESCONTO_DEPOSITO;
+        if(conta < 0){
+            throw new IllegalArgumentException("Você tentou lançar um valor negativo na Conta Corrente.");
+        }else{
+            this.saldo += conta - VALOR_DESCONTO_DEPOSITO;
+        }
         
     }
 
