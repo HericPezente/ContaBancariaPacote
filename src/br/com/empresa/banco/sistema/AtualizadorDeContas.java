@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package contabancaria;
+package br.com.empresa.banco.sistema;
+
+import br.com.empresa.banco.conta.Conta;
 
 /**
  *

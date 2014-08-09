@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 
-package contabancaria;
+package br.com.empresa.banco;
+
+import br.com.empresa.banco.conta.ContaCorrente;
+import contabancaria.Tributavel;
 
 /**
  *
