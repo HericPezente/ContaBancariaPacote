@@ -6,6 +6,8 @@
 
 package br.com.empresa.banco;
 
+import br.com.empresa.banco.conta.Conta;
+import br.com.empresa.banco.conta.ContaCorrente;
 import br.com.empresa.banco.conta.ContaPoupanca;
 
 /**
@@ -52,8 +54,14 @@ public class TestaContas {
  		//System.out.println(cc.getSaldo());
 
  		System.out.println(cp.getSaldo());
-
-        
+                
+          
+    Conta conta= new ContaCorrente();
+    conta.deposita(100);
+    System.out.println(conta);    
     }
+    
+    
+    
     
 }

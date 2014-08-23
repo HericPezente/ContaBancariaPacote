@@ -15,6 +15,7 @@ public  abstract class Conta {
     public static final int VALOR_PADRAO_MULTIPLICACAO=3;
     public static final double VALOR_DESCONTO_DEPOSITO=0.10;
     protected double saldo;
+    private int numero;
     
     /**
      Obtem o saldo da conta
@@ -59,6 +60,37 @@ public  abstract class Conta {
         System.out.println(this.getBonificacao());
         
     }
+
+    @Override
+    public String toString() {
+        return "esse objeto é um conta com saldo R$: "+this.saldo;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    
+    
+    @Override
+    public boolean equals(Object obj) {
+        Conta outraConta=(Conta) obj;
+        
+        if(this.numero == outraConta.getNumero()){
+            return true;
+        }
+        else return false;
+    }
+
+    
+    
+    
+    
+    
     
     
 }
