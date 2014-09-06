@@ -5,6 +5,8 @@
  */
 package br.com.empresa.banco.conta;
 
+
+
 /**
  *
  * @author i03
@@ -12,7 +14,7 @@ package br.com.empresa.banco.conta;
 
 
         
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca extends Conta implements Comparable<ContaPoupanca>{
     
    
 
@@ -29,6 +31,27 @@ public class ContaPoupanca extends Conta {
     public double getBonificacao() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /**
+    @Override
+    public int compareTo(ContaPoupanca o) {
+    if(this.getNumero() < o.getNumero()){
+    return -1;
+    }
+    if(this.getNumero() > o.getNumero()){ 
+    return 1;
+    }
+    return 0;
+    }
+     */
+    @Override
+    public int compareTo(ContaPoupanca o) {
+        return this.getNumero() - o.getNumero();
+    }
+ 
+    
+    
      
+    
 
 }
